@@ -1,0 +1,61 @@
+.invoice-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+.form-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+label {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.save-button,
+.cancel-button {
+    margin-top: 10px;
+    background-color: #ffab00;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: #fff;
+    font-weight: bold;
+    align-self: center;
+}
+
+.save-button:hover {
+    background-color: #ffc107;
+}
+
+.cancel-button {
+    background-color: #888;
+}
+
+.title {
+    display: flex;
+}
+
+:host ::ng-deep .react-datepicker-wrapper input {
+    margin-left: 0 !important;
+}
