@@ -1,6 +1,6 @@
 .invoice-list-container {
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #dfdddd;
     padding: 20px;
     min-height: 100vh;
     display: flex;
@@ -9,12 +9,32 @@
 }
 
 .invoice-list {
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    border: 5px solid #bab3c1;
+    margin-top: 10px;
+    border-radius: 15px;
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #909cbf;
+        border-radius: 20px;
+    }
 }
 
 .invoice-item {
@@ -24,14 +44,37 @@
 }
 
 .invoice-card {
-    background-color: #f1f1f1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 5px;
     padding: 10px;
     position: relative;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    &.paid {
+        background-color: #00800040;
+    }
+
+    &.pending {
+        background-color: #FFA50040;
+    }
+
+    &.overdue {
+        background-color: #FF000040;
+    }
+
+    .invoice-options {
+        justify-content: flex-start;
+        align-items: center;
+        width: 5% !important;
+    }
+}
+
+.invoice-card:not(.invoice-options) > div {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: start;
 }
 
 .invoice-header {
@@ -45,12 +88,6 @@
     white-space: nowrap;
     margin-inline-end: 15px;
     margin-inline-start: 5px;
-}
-
-.invoice-options {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 .option-button {
@@ -77,6 +114,12 @@
     font-size: 12px;
 }
 
+.options-wrapper {
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
 .options-popup {
     position: absolute;
     top: 100%;
@@ -89,6 +132,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    z-index: 2;
 }
 
 .invoice-popup {
@@ -176,4 +220,18 @@
 
 .add-invoice-icon {
     margin-right: 5px;
+}
+
+.no-invoices {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    font-size: 22pt;
+}
+
+.no-invoices-button {
+    display: block;
+    margin-top: 15px;
+    font-size: 15pt;
+    color: grey;
 }

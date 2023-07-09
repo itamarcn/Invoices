@@ -9,10 +9,12 @@ namespace InvoicesManagement.Controllers
     public class InvoicesController : ControllerBase
     {
         private readonly InvoiceService _invoiceService;
+        private readonly UserService _userService;
 
-        public InvoicesController(InvoiceService invoiceService)
+        public InvoicesController(InvoiceService invoiceService, UserService userService)
         {
             _invoiceService = invoiceService;
+            _userService = userService;
         }
 
         [HttpGet]
@@ -37,7 +39,9 @@ namespace InvoicesManagement.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateInvoice(Invoice invoice)
         {
+            var user = await _userService.GetUserById(invoice.UserId);
             var createdInvoice = await _invoiceService.CreateInvoice(invoice);
+            createdInvoice.User = user;
             return CreatedAtAction(nameof(GetInvoice), new { id = createdInvoice.Id }, createdInvoice);
         }
 
@@ -49,15 +53,10 @@ namespace InvoicesManagement.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteInvoice(string id)
+        public async Task<bool> DeleteInvoice(string id)
         {
             var isDeleted = await _invoiceService.DeleteInvoice(id);
-            if (!isDeleted)
-            {
-                return NotFound();
-            }
-
-            return NoContent();
+            return isDeleted;
         }
     }
 }

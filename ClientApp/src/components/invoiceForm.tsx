@@ -30,11 +30,22 @@ const InvoiceForm: React.FC<InvoiceFormProps> = ({ invoice, onSubmit, onCancel }
     }, []);
 
     useEffect(() => {
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            ...invoice,
-            user: invoice?.user ? { ...prevFormData.user, ...(invoice?.user || {}) } : undefined,
-        }));
+        if (invoice) {
+            setFormData((prevFormData) => ({
+                ...prevFormData,
+                ...invoice,
+                user: invoice?.user ? { ...prevFormData.user, ...(invoice?.user || {}) } : undefined,
+            }));
+        } else {
+            setFormData({
+                id: '',
+                userId: '',
+                date: '',
+                status: 0,
+                item: '',
+                amount: 0,
+            });
+        }
     }, [invoice]);
 
     const fetchUsers = async () => {

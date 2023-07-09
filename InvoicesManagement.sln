@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoicesManagement", "InvoicesManagement.csproj", "{CE16D489-06D7-4444-A56C-1EBA5055C1BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoicesManagementTests", "..\InvoicesManagementTests\InvoicesManagementTests.csproj", "{4333A985-3BE4-4483-BBFD-964BC15ACFD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CE16D489-06D7-4444-A56C-1EBA5055C1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE16D489-06D7-4444-A56C-1EBA5055C1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE16D489-06D7-4444-A56C-1EBA5055C1BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4333A985-3BE4-4483-BBFD-964BC15ACFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4333A985-3BE4-4483-BBFD-964BC15ACFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4333A985-3BE4-4483-BBFD-964BC15ACFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4333A985-3BE4-4483-BBFD-964BC15ACFD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

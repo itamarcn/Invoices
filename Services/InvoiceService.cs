@@ -60,19 +60,19 @@ namespace InvoicesManagement.Services
         {
             var mutation = @"
                 mutation CreateInvoice($invoice: Invoices_insert_input!) {
-                    insert_Invoices_one(object: $invoice) {
-                        id
-                        userId
-                        date
-                        status
-                        item
-                        amount
-                    }
+                  insert_Invoices_one(object: $invoice) {
+                    id
+                    userId
+                    date
+                    status
+                    item
+                    amount
+                  }
                 }";
 
             var variables = new { invoice };
             var response = await _graphQLService.SendGraphQlRequest(mutation, variables);
-            return _graphQLService.ParseGraphQlResponse<Invoice>(response, "Invoices_by_pk");
+            return _graphQLService.ParseGraphQlResponse<Invoice>(response, "insert_Invoices_one");
         }
 
         public async Task<Invoice> UpdateInvoice(string id, Invoice invoice)
