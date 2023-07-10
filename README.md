@@ -1,2 +1,2 @@
 # Invoices
-Invoices app using .Net core, React, GraphQL,  Hasura, PostgreSQL
+Invoices app using .Net core+Unit tests, React, GraphQL,  Hasura, PostgreSQL
