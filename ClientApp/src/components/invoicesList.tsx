@@ -173,31 +173,6 @@ const InvoiceList: React.FC = () => {
                             {invoices.map((invoice) => (
                                 <li key={invoice.id} className="invoice-item">
                                     <div className={`invoice-card ${InvoiceStatus[invoice.status as number].toLowerCase()}`}>
-                                        {/* <div className="invoice-options">
-                                        <button
-                                            className="option-button"
-                                            onClick={() => handleOptionsClick(invoice.id)}
-                                        >
-                                            <div className="option-square">
-                                                <FontAwesomeIcon icon={faEllipsisV} className="option-icon" />
-                                            </div>
-                                        </button>
-                                        {selectedInvoice === invoice.id && (
-                                            <div className="options-popup" ref={popupRef}>
-                                                <button
-                                                    className="popup-option"
-                                                    onClick={() => handleDeleteInvoice(invoice.id)}
-                                                >
-                                                    Delete
-                                                </button>
-                                                <button
-                                                    className="popup-option"
-                                                    onClick={() => handleEditInvoice(invoice)}>
-                                                    Edit
-                                                </button>
-                                            </div>
-                                        )}
-                                    </div> */}
                                         <div className="options-wrapper">
                                             <button
                                                 className="popup-option"
